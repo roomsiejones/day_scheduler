@@ -4,12 +4,13 @@
     
     //display current day at top of calendar
     function displayDate() {
-        let currentDay = $("#currentDay").text(momentVar);
+        var currentDay = $("#currentDay").text(momentVar);
         return currentDay;
         
     }
     displayDate()
 
+    // created a blank array to store the values of each id into
     var taskItem = []
     
     //retrieve saved items from local storage if there are values stored
@@ -51,6 +52,7 @@
         var blockHour = parseInt($(this).attr("id"));
         // console.log(blockHour);
         if (currentHour > blockHour) {
+            // utilized the built-in styles already
             $(this).addClass("past");
         } else if (currentHour === blockHour) {
             $(this).remove("past");
